@@ -116,6 +116,59 @@ If you'd like to see this in action, I demonstrated it on [Claire Vo's "How I AI
 * **Correct File Tagging:** Always ensure you're accurately tagging the PRD filename (e.g., `@MyFeature-PRD.md`) when generating tasks.
 * **Patience and Iteration:** AI is a powerful tool, but it's not magic. Be prepared to guide, correct, and iterate. This workflow is designed to make that iteration process smoother.
 
+## What to Tell Your AI About the Project
+
+Use this short briefing template when asking the AI to create a PRD or task list. The more complete this is, the fewer clarification loops you'll need.
+
+```md
+## Project Brief
+- Product/Service:
+- Feature Name:
+- Problem to Solve:
+- Target Users:
+
+## Current State
+- Current behavior:
+- Pain points:
+- Existing related files/modules:
+
+## Desired Outcome
+- What should users be able to do after this feature?
+- In scope:
+- Out of scope:
+
+## Constraints
+- Deadline / priority:
+- Tech constraints (stack, architecture, APIs):
+- Security/compliance constraints:
+- Performance constraints:
+- Browser/device support:
+
+## Validation
+- Acceptance criteria (pass/fail):
+- Required tests:
+- Definition of done:
+```
+
+### Recommended Prompt Examples
+
+1. Create PRD
+
+```text
+Use @create-prd.md
+Use this project brief:
+[paste brief]
+Reference files: [@path/to/file1 @path/to/file2]
+```
+
+2. Create tasks from PRD
+
+```text
+Use @generate-tasks.md with @tasks/prd-[feature-name].md
+Generate parent tasks first and wait for my "Go".
+After sub-tasks and relevant files are drafted, wait for my "Approve files".
+```
+
 ## Contributing
 
 Got ideas to improve these `.md` files or have new ones that fit this workflow? Contributions are welcome!
